@@ -22,7 +22,6 @@ struct BoxMeta: BinaryCodable, Equatable {
             throw BoxError.invalidColumnNames(errCols)
         }
         self.columns = columns
-        try (Data() as NSData).compressed(using: .lzfse)
     }
 
     init(from decoder: BinaryDecoder) throws {
