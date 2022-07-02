@@ -1,11 +1,18 @@
-import XCTest
-@testable import Boxes
-
-final class BoxesTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Boxes().text, "Hello, World!")
-    }
-}
+//import XCTest
+//@testable import Boxes
+//
+//final class BoxesTests: XCTestCase {
+//    func testOpen() throws {
+//        XCTAssertNoThrow(
+//            try Table(path: "/Users/akash/books.json"),
+//            "Could not open valid file."
+//        )
+//
+//        XCTAssertThrowsError(
+//            try Table(path: "/Users/akash/book.json"),
+//            "Opened an file that is not available."
+//        )
+//        
+//        print("Hi".data(using: .utf8)!)
+//    }
+//}
