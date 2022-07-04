@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "tlvcoding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PureSwift/TLVCoding",
+      "state" : {
+        "revision" : "548e984056146722f148794a48f18f093c778097",
+        "version" : "2.2.2"
+      }
+    }
+  ],
+  "version" : 2
+}

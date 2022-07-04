@@ -1,11 +1,11 @@
 import Foundation
 
 protocol CodableEncoder {
-    func encode<T: Encodable>(_ object: T) throws -> Data
+    func encodeFromObject<T: Encodable>(_ object: T) throws -> Data
 }
 
 protocol CodableDecoder {
-    func decode<T: Decodable>(_ type: T.Type, from: Data) throws -> T
+    func decodeToObject<T: Decodable>(_ type: T.Type, from: Data) throws -> T
 }
 
 protocol FileIOCoder {
@@ -26,7 +26,7 @@ extension FileIOCoder {
         }
 
         do {
-            writingFile.write(try encoder.encode(meta))
+            writingFile.write(try encoder.encodeFromObject(meta))
         } catch BoxError.boxMetaEncodeError(let error) {
             throw BoxError.boxMetaEncodeError(error)
         } catch {
@@ -46,7 +46,7 @@ extension FileIOCoder {
             throw BoxError.boxOpenError(.read, error)
         }
         do {
-            return try decoder.decode(
+            return try decoder.decodeToObject(
                 BoxMeta.self,
                 from: try readingFile.readToEnd().unsafelyUnwrapped)
         } catch BoxError.boxMetaDecodeError(let error) {

@@ -1,5 +1,4 @@
 import XCTest
-import BinaryCodable
 @testable import Boxes
 
 final class BoxMetaTests: XCTestCase {
@@ -13,11 +12,11 @@ final class BoxMetaTests: XCTestCase {
             "Extra space at the beginning of column name should raise an error.")
     }
 
-    func testFileIO() throws {
+    func testFileTlvIOCoder() throws {
         let meta = try! BoxMeta(columns: ["Hi", "Hello", "nil", "0", "TEST"])
         let box = Box(meta: meta)
-        let file = FileIOCoder(path: "/Users/akash/bajat.box")
-
+        let file = TlvIOCoder(path: "/Users/akash/bajat.box")
+        
         XCTAssertNoThrow(try file.write(box))
         XCTAssertNoThrow(try file.readMeta())
         XCTAssertEqual(meta, try file.readMeta())
