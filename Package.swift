@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Boxes",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v14),
         .watchOS(.v6),
         .tvOS(.v10),
         .macOS(.v11),

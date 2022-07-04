@@ -2,13 +2,13 @@ import Foundation
 import SwiftBSON
 
 extension BSONEncoder: CodableEncoder {
-    func encode<T>(_ object: T) throws -> Data where T: Encodable {
+    func encodeFromObject<T>(_ object: T) throws -> Data where T: Encodable {
         try encode(object).toData()
     }
 }
 
 extension BSONDecoder: CodableDecoder {
-    func decode<T: Decodable>(_ type: T.Type, from: Data) throws -> T {
+    func decodeToObject<T: Decodable>(_ type: T.Type, from: Data) throws -> T {
         try decode(T.self, from: BSONDocument(fromBSON: from))
     }
 }
