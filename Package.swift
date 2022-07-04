@@ -27,5 +27,9 @@ let package = Package(
             name: "Boxes",
             dependencies: ["TLVCoding"]
         ),
+        .testTarget(
+            name: "BoxesTests",
+            dependencies: ["Boxes"]
+        ),
     ]
 )
