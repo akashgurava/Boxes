@@ -18,7 +18,7 @@ final class BoxMetaTests: XCTestCase {
         let box = Box(meta: meta)
         let file = FileIOCoder(path: "/Users/akash/bajat.box")
 
-        XCTAssertNoThrow(try file.write(meta))
+        XCTAssertNoThrow(try file.write(box))
         XCTAssertNoThrow(try file.readMeta())
         XCTAssertEqual(meta, try file.readMeta())
     }
