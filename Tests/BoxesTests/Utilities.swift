@@ -1,12 +1,4 @@
-//
-//  File.swift
-//
-//
-//  Created by Akash Gurava on 02/07/22.
-//
-
 import Foundation
-
 
 @_transparent @discardableResult public func measureBlock(
     label: String? = nil,
@@ -47,5 +39,5 @@ import Foundation
 
 public func randomString(_ length: Int) -> String {
     let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    return String((0..<length).map{ _ in letters.randomElement()! })
+    return String((0..<length).map { _ in letters.randomElement()! })
 }

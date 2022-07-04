@@ -15,9 +15,10 @@ final class BoxMetaTests: XCTestCase {
 
     func testFileIO() throws {
         let meta = try! BoxMeta(columns: ["Hi", "Hello", "nil", "0", "TEST"])
+        let box = Box(meta: meta)
+        let file = FileIOCoder(path: "/Users/akash/bajat.box")
 
-        let file = Box(path: "/Users/akash/bajat.box")
-        XCTAssertNoThrow(try file.writeMeta(meta))
+        XCTAssertNoThrow(try file.write(meta))
         XCTAssertNoThrow(try file.readMeta())
         XCTAssertEqual(meta, try file.readMeta())
     }
