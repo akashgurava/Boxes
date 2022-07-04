@@ -1,5 +1,4 @@
 import XCTest
-import BinaryCodable
 @testable import Boxes
 
 final class BoxMetaTests: XCTestCase {
